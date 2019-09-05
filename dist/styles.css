@@ -36,19 +36,19 @@ button {
 
 @-webkit-keyframes runnning-line {
     0% {
-        transform: translateX(90%);
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-90%);
+        transform: translateX(-100%);
     }
 }
 
 @keyframes runnning-line {
     0% {
-        transform: translateX(90%);
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-90%);
+        transform: translateX(-100%);
     }
 }
 
@@ -112,6 +112,10 @@ button {
     color: #fff;
 }
 
+.menu {
+    display: none;
+}
+
 .header-bottom {
     display: flex;
     height: 40px;
@@ -123,7 +127,12 @@ button {
     background-color: #888;
 }
 
+.header-search-inp {
+    flex-shrink: 0;
+}
+
 .search-input {
+    width: 130px;
     border: none;
     border-radius: 5px 0 0 5px;
     padding: 5px;
@@ -134,7 +143,7 @@ button {
     border: none;
     border-radius: 0 5px 5px 0;
     background-color: #fff;
-    padding: 5px;
+    padding: 5px 10px;
     margin: 5px 5px 5px 0;
 }
 
@@ -144,7 +153,7 @@ button {
     color: #fff;
     border: none;
     height: 100%;
-    padding: 5px;
+    padding: 5px 10px;
     font-size: 0.8em;
     text-align: start;
 }
@@ -152,7 +161,7 @@ button {
 .header-btn-wrap {
     padding: 0;
     border-left: 1px solid #666;
-    width: 100px;
+    width: 120px;
 }
 
 .header-btn-wrap:hover,
@@ -174,7 +183,7 @@ button {
 
 .tel-number {
     position: relative;
-    top: -30px;
+    top: -31px;
     margin: 0 auto;
     text-align: center;
     color: #666;
@@ -192,7 +201,7 @@ button {
 }
 
 .viber-mts {
-    width: 300px;
+    min-width: 200px;
     color: #fff;
     background-color: #666;
     font-size: 0.7em;
@@ -686,4 +695,231 @@ button {
 .number-fixed {
     position: relative;
     top: 37px;
+}
+
+/*=======================================RESPONSIVE==========================================*/
+@media (max-width: 1100px) {
+    .header-btn-wrap-empty {
+        display: none;
+    }
+
+    .nav .links .lang {
+        margin: auto;
+    }
+
+    .viber-mts {
+        width: unset;
+    }
+}
+
+@media (max-width: 940px) {
+    .nav .links .lang {
+        margin: 0 30px;
+    }
+
+    .running {
+        display: none;
+    }
+
+    .header-search-inp {
+        display: none;
+    }
+
+    .book-eng-input {
+        width: 90%;
+    }
+
+    .book-eng-big-text {
+        font-size: 0.7em;
+    }
+
+    .prepare-for-summer {
+        height: unset;
+    }
+
+    .footer-copyright {
+        margin-bottom: 0;
+    }
+
+    .footer-social {
+        top: -45px;
+    }
+
+    .tasks-bg {
+        display: none;
+    }
+
+    .tasks-any {
+        left: 0;
+    }
+
+    .tasks-left {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .engineer-bg {
+        display: none;
+    }
+
+    .engineer-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .engineer-heading {
+        margin: 30px auto;
+    }
+
+    .engineer-form {
+        margin: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .header-bottom {
+        display: none;
+    }
+
+    .nav {
+        position: relative;
+        min-height: 80px;
+        font-size: 1.5em;
+    }
+
+    .nav .links,
+    .nav .links.open {
+        flex-direction: column;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.6s linear;
+    }
+
+    .nav .links.open {
+        max-height: 500px;
+    }
+
+    .nav .links.open > a,
+    .nav .links > a {
+        margin: 15px 0;
+    }
+
+    .menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        border: 4px solid #00a5b8;
+    }
+
+    /*-----------------animation---------------*/
+    .menu .menu-line {
+        height: 5px;
+        width: 85%;
+        margin: 15px auto;
+        background-color: #000;
+        border-radius: 2px;
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .menu.open .menu-line {
+        transform: rotate(45deg);
+        transition: opacity 0.2s ease-in;
+    }
+
+    .menu.open .line-1 {
+        opacity: 0;
+        transform: translateY(15px);
+        /* transition: opacity 0.2s ease-in; */
+    }
+
+    .menu.open .line-3 {
+        transform: translateY(-18px) rotate(-45deg);
+    }
+    /*--------------end-of-animation------------*/
+
+    .book-engineer {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .prepare-for-summer {
+        order: 1;
+        width: 100%;
+        top: 0;
+    }
+
+    .book-eng-form {
+        order: 2;
+        width: 80%;
+        height: unset;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+
+    .book-eng-big-text {
+        margin: 5px 0;
+    }
+
+    .book-eng-small-text {
+        margin: 0;
+    }
+
+    .book-eng-send {
+        margin-top: 0px;
+    }
+
+    .work-key-works {
+        flex-wrap: wrap;
+    }
+
+    .key-work {
+        min-width: 200px;
+        margin: 20px auto;
+    }
+
+    .tasks-left {
+        width: 100%;
+    }
+
+    .tasks-examples {
+        flex-wrap: wrap;
+    }
+
+    .tasks-examples > div {
+        min-width: 120px;
+    }
+
+    .engineer-heading {
+        width: 90%;
+        font-size: 1.6em;
+    }
+
+    .why-subheading {
+        width: 90%;
+    }
+
+    .why-table td {
+        height: unset;
+        border-bottom: 1px solid #888;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    .questions {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 0 10px 0;
+    }
+
+    .footer-social {
+        top: -60px;
+    }
 }

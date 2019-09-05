@@ -5,9 +5,13 @@ const fixedCallP = document.querySelector('.call-everyday');
 const viberFixed = document.querySelector('.viber-mts');
 const numberFixed = document.querySelector('.number');
 
-window.addEventListener('scroll', showUpBtn);
+const menuBtn = document.querySelector('.menu');
+const links = document.querySelector('.links');
 
-function showUpBtn(event) {
+window.addEventListener('scroll', showUpBtnFixedBar);
+menuBtn.addEventListener('click', toggleMenu);
+
+function showUpBtnFixedBar(event) {
     if (body.scrollTop > 180) {
         fixedBtn.style.display = 'block';
 
@@ -22,5 +26,15 @@ function showUpBtn(event) {
         fixedCallP.classList.remove('call-everyday-fixed');
         viberFixed.classList.remove('viber-mts-fixed');
         numberFixed.classList.remove('number-fixed');
+    }
+}
+
+function toggleMenu(event) {
+    if (menuBtn.classList.contains('open')) {
+        links.classList.remove('open');
+        menuBtn.classList.remove('open');
+    } else {
+        links.classList.add('open');
+        menuBtn.classList.add('open');
     }
 }
